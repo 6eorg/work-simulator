@@ -3,9 +3,10 @@ import os
 import time
 import random
 from datetime import datetime
-
 import pyautogui
 import pyperclip
+import codecs
+
 
 # CONFIGURATION
 addresses_f = ["Sehr geehrte Frau", "Liebe Frau"]
@@ -38,7 +39,7 @@ def readLetters():
     letters = []
     for path in letters_path:
         text = ""
-        with open(path, "r", encoding="utf-8") as file:
+        with codecs.open(path, "r", "utf-8") as file:
             for line in file:
                 text = text + line
         letters.append(text)
