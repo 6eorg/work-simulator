@@ -13,7 +13,7 @@ addresses_f = ["Sehr geehrte Frau", "Liebe Frau"]
 addresses_m = ["Sehr geehrter Herr", "Lieber Herr"]
 names = ["Meier", "Müller", "Huber", "Hugentobler", "Ramseier", "Schneider"]
 fileNameLetter = "Brief"
-fileNameGender = ["Herr", "Frau"]
+fileNameGender = ["Frau", "Herr"]
 yourName = "Georg"
 save_directory = "geschriebene_Briefe"
 
@@ -60,17 +60,14 @@ def typeText(text):
             errors = [*"abcdefgihijklmnopqrstuvwxyzABCDEFG0123456"]
             pyautogui.write(random.choice(errors), typeSpeed)
             pyautogui.write(random.choice(errors), typeSpeed)
-            # delete the chars
+            # delete the chars again
             pyautogui.press('backspace')
             time.sleep(typeSpeed + 0.1)
             pyautogui.press('backspace')
             time.sleep(typeSpeed + 0.1)
-            # write the right one
-            pyautogui.hotkey('ctrl', 'v')
-            time.sleep(typeSpeed)
-        else:
-            pyautogui.hotkey('ctrl', 'v')
-            time.sleep(typeSpeed)
+        # write the char
+        pyautogui.hotkey('ctrl', 'v')
+        time.sleep(typeSpeed)
 
 
 # SETUP
